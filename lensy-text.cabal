@@ -1,0 +1,74 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: d7b36ba095c5e8f48181a684c4808af0379852c1f67ee4ab329d42b95f00d640
+
+name:           lensy-text
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/jborkowski/lensy-text#readme>
+homepage:       https://github.com/jborkowski/lensy-text#readme
+bug-reports:    https://github.com/jborkowski/lensy-text/issues
+author:         Jonatan Borkowski
+maintainer:     jonatanborkowski@wp.pl
+copyright:      2019 Jonatan Borkowski
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/jborkowski/lensy-text
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_lensy_text
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , lens
+    , raw-strings-qq
+    , text
+  default-language: Haskell2010
+
+executable lensy-text-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_lensy_text
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , lens
+    , lensy-text
+    , raw-strings-qq
+    , text
+  default-language: Haskell2010
+
+test-suite lensy-text-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_lensy_text
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , lens
+    , lensy-text
+    , raw-strings-qq
+    , text
+  default-language: Haskell2010
